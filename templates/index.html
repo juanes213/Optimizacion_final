@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Optimización de Presupuesto de Capital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="bx bx-menu sidebarOpen"></i>
+            <span class="logo navLog"><a href="#">Optimización de Capital</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">OptiCap</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/model">Modelo</a></li>
+                    <li><a href="/visualization">Visualización</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class="bx bx-sun sun"></i>
+                    <i class="bx bx-moon moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <section class="hero__container">
+            <h1 class="hero__title">Optimización de Presupuesto de Capital</h1>
+            <p class="hero__paragraph">Maximizamos el valor de tus inversiones a través de estrategias optimizadas de presupuesto de capital.</p>
+        </section>
+    </header>
+
+    <menu>
+        <section class="container about">
+            <h1 class="subtitle">¿Qué podrás encontrar aquí?</h1>
+            <p class="about__paragraph">Aquí encontrarás herramientas avanzadas para la optimización de presupuesto de capital. Explora nuestros modelos de optimización y visualizaciones interactivas que te ayudarán a tomar decisiones informadas y estratégicas para maximizar el valor de tus inversiones.</p>
+
+            <div class="about__main">
+                <article class="about__icons">
+                    <img src="static/imagenes/shape.svg" alt="" class="about__icon">
+                    <h3 class="about__title">Misión</h3>
+                    <p class="about__paragraph">Proporcionar soluciones integrales y optimizadas para la gestión del presupuesto de capital, ayudando a las empresas a maximizar el valor de sus inversiones a través de decisiones informadas y estratégicas.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="static/imagenes/paint.svg" alt="" class="about__icon">
+                    <h3 class="about__title">Visión</h3>
+                    <p class="about__paragraph">Ser reconocidos como el principal recurso en línea para la optimización de presupuesto de capital, ofreciendo herramientas innovadoras y estrategias efectivas para maximizar el valor de las inversiones empresariales.</p>
+                </article>
+
+                <article class="about__icons">
+                    <img src="static/imagenes/shape.svg" alt="" class="about__icon">
+                    <h3 class="about__title">Objetivos</h3>
+                    <p class="about__paragraph">Proveer a nuestros usuarios con herramientas y modelos avanzados para una gestión eficiente del presupuesto de capital, facilitando decisiones de inversión estratégicas y basadas en datos.</p>
+                </article>
+            </div>
+        </section>
+ 
+        <section class="person">
+            <div class="person_container container">
+                <img src="static/imagenes/leftarrow.svg" alt="" class="person_arrow" id="before">
+                <section class="person_body person_body--show" data-id="1">
+                    <div class="person_texts">
+                        <h2 class="subtitle">Juan Esteban Albis</h2>
+                        <p class="person_review">Estudiante de sexto semestre de Ciencia de Datos de la Universidad del Norte.</p>
+                    </div>
+
+                </section>
+                <img src="static/imagenes/rightarrow.svg" alt="" class="person_arrow" id="next">
+
+                <section class="person_body" data-id="2">
+                    <div class="person_texts">
+                        <h2 class="subtitle">Lorenzo Gutierrez</h2>
+                        <p class="person_review">Estudiante de quinto semestre de Ciencia de Datos de la Universidad del Norte.</p>
+                    </div>
+
+                </section>
+            </div>
+        </section>
+
+        <section class="questions container">
+            <h2 class="subtitle">Preguntas frecuentes</h2>
+            <p class="questions__paragraph">Encuentra aquí nuestras preguntas más frecuentes sobre la optimización de presupuesto de capital.</p>
+
+            <section class="questions__container">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Qué es la optimización de presupuesto de capital?
+                            <span class="questions__arrow">
+                                <img src="static/imagenes/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+                        <p class="questions__show">La optimización de presupuesto de capital es el proceso de asignar los recursos financieros disponibles de manera que se maximice el valor de las inversiones y se minimicen los riesgos.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Cómo funcionan los modelos de optimización?
+                            <span class="questions__arrow">
+                                <img src="static/imagenes/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+                        <p class="questions__show">Nuestros modelos de optimización utilizan algoritmos avanzados y técnicas de machine learning para analizar datos financieros y ofrecer recomendaciones precisas sobre la asignación óptima de recursos.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Qué beneficios ofrece la visualización de datos?
+                            <span class="questions__arrow">
+                                <img src="static/imagenes/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+                        <p class="questions__show">La visualización de datos permite comprender mejor la información financiera compleja a través de gráficos interactivos, facilitando la toma de decisiones estratégicas basadas en datos claros y comprensibles.</p>
+                    </div>
+                </article>
+
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Cómo puedo acceder a las herramientas de optimización?
+                            <span class="questions__arrow">
+                                <img src="static/imagenes/arrow.svg" class="questions__img">
+                            </span>
+                        </h3>
+                        <p class="questions__show">Puedes acceder a nuestras herramientas de optimización y visualización registrándote en nuestra plataforma. Una vez registrado, tendrás acceso completo a todas nuestras funcionalidades.</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <footer class="footer">
+            <section class="footer__container container">
+                <form class="footer__form" action="https://formspree.io/f/xdoqjpkg" method="POST">
+                </form>
+            </section>
+            <section class="footer__copy container">
+                <div class="footer__social">
+                    <a href="#" class="footer__icons"><img src="static/imagenes/facebook.svg" class="footer__img"></a>
+                    <a href="#" class="footer__icons"><img src="static/imagenes/twitter.svg" class="footer__img"></a>
+                    <a href="#" class="footer__icons"><img src="static/imagenes/instagram.svg" class="footer__img"></a>
+                </div>
+                <h3 class="footer__copyright">Derechos reservados &copy; Juan Albis - Lorenzo Gutierrez</h3>
+            </section>
+        </footer>
+    </menu>
+    <!-- <script src="js/questions.js"></script>
+    <script src="js/sliders.js"></script> -->
+    <script src="{{ url_for('static', filename='questions.js') }}"></script>
+    <script src="{{ url_for('static', filename='sliders.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

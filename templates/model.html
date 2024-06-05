@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap' rel='stylesheet'>
+    <title>Modelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class="bx bx-menu sidebarOpen"></i>
+            <span class="logo navLog"><a href="/">Optimización de Capital</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="/">OptiCap</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/model">Modelo</a></li>
+                    <li><a href="/visualization">Visualización</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class="bx bx-sun sun"></i>
+                    <i class="bx bx-moon moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <section class="hero__container">
+            <h1 class="hero__title">Modelo</h1>
+        </section>
+    </header>
+    <main class="main-content model-content">
+        <section class="form-section model-form-section">
+            <form id="model-form" class="model-form" method="POST" action="/model">
+                <label for="sector">Seleccione un sector:</label>
+                <select name="sector" id="sector">
+                    <option value="etfs">ETFs</option>
+                    <option value="salud">Salud</option>
+                    <option value="financiero">Financiero</option>
+                    <option value="publico">Público</option>
+                    <option value="tecnologico">Tecnológico</option>
+                    <option value="industrial">Industrial</option>
+                </select>
+                <br>
+                <label for="num_stocks">Número de stocks a escoger:</label>
+                <select name="num_stocks" id="num_stocks">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br>
+                <label for="max_stocks">Máximo de stocks a seleccionar:</label>
+                <select name="max_stocks" id="max_stocks">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <br>
+                <label for="max_cash_outflow">Máximo cash outflow permitido:</label>
+                <select name="max_cash_outflow" id="max_cash_outflow">
+                    <option value="1000000">1,000,000</option>
+                    <option value="10000000">10,000,000</option>
+                    <option value="100000000">100,000,000</option>
+                    <option value="1000000000">1,000,000,000</option>
+                    <option value="10000000000">10,000,000,000</option>
+                </select>
+                <br>
+                <label for="implicacion">Inversión que implica otra:</label>
+                <select name="implicacion" id="implicacion">
+                    <option value="1,2">1 implica 2</option>
+                    <option value="3,4">3 implica 4</option>
+                    <option value="5,6">5 implica 6</option>
+                </select>
+                <br>
+                <label for="exclusion">Inversión que excluye otra:</label>
+                <select name="exclusion" id="exclusion">
+                    <option value="1,2">1 excluye 2</option>
+                    <option value="3,4">3 excluye 4</option>
+                    <option value="5,6">5 excluye 6</option>
+                </select>
+                <br>
+                <input type="submit" value="Optimizar">
+            </form>
+        </section>
+        <section class="results-section">
+            <div id="results"></div>
+            <div id="fig1"></div>
+            <div id="fig2"></div>
+            <div id="fig3"></div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Manejar la respuesta del servidor para mostrar resultados y gráficos
+        document.getElementById('model-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/model', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json()).then(data => {
+                document.getElementById('results').innerHTML = data.results_html;
+                Plotly.newPlot('fig1', data.fig1.data, data.fig1.layout);
+                Plotly.newPlot('fig2', data.fig2.data, data.fig2.layout);
+                Plotly.newPlot('fig3', data.fig3.data, data.fig3.layout);
+            });
+        });
+    </script>
+</body>
+</html>

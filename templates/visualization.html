@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap' rel='stylesheet'>
+    <title>Visualización</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="visualization-page">
+    <nav>
+        <div class="nav-bar">
+            <i class="bx bx-menu sidebarOpen"></i>
+            <span class="logo navLog"><a href="/">Optimización de Capital</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="/">OptiCap</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/model">Modelo</a></li>
+                    <li><a href="/visualization">Visualización</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class="bx bx-sun sun"></i>
+                    <i class="bx bx-moon moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="hero visualization-hero">
+        <section class="hero__container">
+            <h1 class="hero__title">Visualización</h1>
+        </section>
+    </header>
+    <main class="main-content visualization-content">
+        <div id="fig1" class="visualization-figure"></div>
+        <div id="fig2" class="visualization-figure"></div>
+        <div id="fig3" class="visualization-figure"></div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        var fig1 = {{ fig1_json | safe }};
+        var fig2 = {{ fig2_json | safe }};
+        var fig3 = {{ fig3_json | safe }};
+        Plotly.newPlot('fig1', fig1.data, fig1.layout);
+        Plotly.newPlot('fig2', fig2.data, fig2.layout);
+        Plotly.newPlot('fig3', fig3.data, fig3.layout);
+    </script>
+</body>
+</html>
