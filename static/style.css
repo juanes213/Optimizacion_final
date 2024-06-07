@@ -316,6 +316,8 @@ nav .nav-bar .logo a{
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -325,7 +327,15 @@ body.dark .person {
     background-image: radial-gradient(#d6d6d6 0.8px, transparent 0.5px), radial-gradient(#b8b8b8 0.8px, #1e445e 0.5px);
     color: #ccc; /* Color de texto en modo oscuro */
 }
-
+.person .person_texts h2{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 270px;
+}
+.person .person_texts p{
+    margin-left: 270px;
+}
 body.dark .person .person_texts {
     color: #ccc; /* Color de texto de los textos de persona en modo oscuro */
 }
@@ -366,6 +376,9 @@ body.dark .person .subtitle {
     pointer-events: unset;
     opacity: 1;
     transition: opacity 1.5s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .person_img{
@@ -379,12 +392,18 @@ body.dark .person .subtitle {
 .person_texts{
     max-width: 700px;
     color: #327649;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .person_course{
     color: #327649;
     display: inline-block;
     padding: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .person_arrow{
@@ -580,13 +599,13 @@ body.dark .footer{
 
 .model-content {
     padding: 20px;  /* Añade espacio alrededor del contenido principal */
-    background-color: #f4f4f9;  /* Color de fondo opcional */
+    /* background-color: #f4f4f9;  Color de fondo opcional */
 }
 
 .model-form-section {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);  /* Fondo transparente */
+    background: rgba(255, 255, 255, 0.8);  
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -629,17 +648,6 @@ body.dark .footer{
 .visualization-figure {
     margin-bottom: 20px;
 }
-
-/* .hero {
-    width: 100%;
-    height: 30vh;  /* Ajusta la altura según sea necesario */
-    /* min-height: 200px;
-    position: relative;
-    display: grid;
-    grid-template-rows: 100px 1fr;
-    color: #FFF;
-} */ 
-
 
 /* adaptarlo a celulares*/
 

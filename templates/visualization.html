@@ -22,7 +22,6 @@
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/model">Modelo</a></li>
-                    <li><a href="/visualization">Visualización</a></li>
                 </ul>
             </div>
             <div class="darkLight-searchBox">
@@ -42,15 +41,24 @@
         <div id="fig1" class="visualization-figure"></div>
         <div id="fig2" class="visualization-figure"></div>
         <div id="fig3" class="visualization-figure"></div>
+        <div id="fig4" class="visualization-figure"></div>
+        <div id="fig5" class="visualization-figure"></div>
+        <div id="fig6" class="visualization-figure"></div>
     </main>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         var fig1 = {{ fig1_json | safe }};
         var fig2 = {{ fig2_json | safe }};
         var fig3 = {{ fig3_json | safe }};
+        var fig4 = {{ fig4_json | safe }};
+        var fig5 = {{ fig5_json | safe }};
+        var fig6 = {{ fig6_json | safe }};
         Plotly.newPlot('fig1', fig1.data, fig1.layout);
         Plotly.newPlot('fig2', fig2.data, fig2.layout);
         Plotly.newPlot('fig3', fig3.data, fig3.layout);
+        Plotly.newPlot('fig4', fig4.data, fig4.layout);
+        Plotly.newPlot('fig5', fig5.data, fig5.layout);
+        Plotly.newPlot('fig6', fig6.data, fig6.layout);
     </script>
 </body>
 </html>

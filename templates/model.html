@@ -21,7 +21,6 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/model">Modelo</a></li>
                     <li><a href="/visualization">Visualización</a></li>
                 </ul>
             </div>
@@ -47,7 +46,7 @@
                     <option value="salud">Salud</option>
                     <option value="financiero">Financiero</option>
                     <option value="publico">Público</option>
-                    <option value="tecnologico">Tecnológico</option>
+                    <option value="tecnologico" selected>Tecnológico</option> <!-- Seleccionado -->
                     <option value="industrial">Industrial</option>
                 </select>
                 <br>
@@ -55,7 +54,7 @@
                 <select name="num_stocks" id="num_stocks">
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="3" selected>3</option> <!-- Seleccionado -->
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
@@ -64,7 +63,7 @@
                 <select name="max_stocks" id="max_stocks">
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="3" selected>3</option> <!-- Seleccionado -->
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
@@ -76,10 +75,21 @@
                     <option value="100000000">100,000,000</option>
                     <option value="1000000000">1,000,000,000</option>
                     <option value="10000000000">10,000,000,000</option>
+                    <option value="100000000000">100,000,000,000</option>
+                    <option value="3000000000000" selected>3,000,000,000,000</option> <!-- Seleccionado -->
+                </select>
+                <br>
+                <label for="min_cash_outflow">Mínimo cash outflow permitido:</label>
+                <select name="min_cash_outflow" id="min_cash_outflow">
+                    <option value="0" selected>0</option> <!-- Seleccionado -->
+                    <option value="100000">100,000</option>
+                    <option value="1000000">1,000,000</option>
+                    <option value="10000000">10,000,000</option>
                 </select>
                 <br>
                 <label for="implicacion">Inversión que implica otra:</label>
                 <select name="implicacion" id="implicacion">
+                    <option value="">Ninguna</option> <!-- Seleccionado -->
                     <option value="1,2">1 implica 2</option>
                     <option value="3,4">3 implica 4</option>
                     <option value="5,6">5 implica 6</option>
@@ -87,13 +97,14 @@
                 <br>
                 <label for="exclusion">Inversión que excluye otra:</label>
                 <select name="exclusion" id="exclusion">
+                    <option value="">Ninguna</option> <!-- Seleccionado -->
                     <option value="1,2">1 excluye 2</option>
                     <option value="3,4">3 excluye 4</option>
                     <option value="5,6">5 excluye 6</option>
                 </select>
                 <br>
                 <input type="submit" value="Optimizar">
-            </form>
+            </form>            
         </section>
         <section class="results-section">
             <div id="results"></div>
